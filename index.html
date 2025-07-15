@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>তথ্যচিত্র | হোম</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=Noto+Serif+Bengali:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body data-theme="dark"> <!-- Defaulting to dark theme for a tech look -->
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-bar"></div>
+
+    <!-- Particle background container -->
+    <div id="particles-js"></div>
+
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">তথ্যচিত্র</h1>
+            <nav class="main-nav">
+                <a href="index.html">হোম</a>
+                <a href="blog.html">ব্লগ</a>
+                <a href="about.html">আমাদের সম্পর্কে</a>
+                <button id="theme-toggle" class="theme-button">☀️</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2 class="hero-title" data-splitting>প্রযুক্তির স্পন্দন</h2>
+                <p class="hero-description animate-on-scroll fade-up">ভবিষ্যতের প্রযুক্তির গভীরে প্রবেশ করুন, আমাদের সাথে।</p>
+                <a href="blog.html" class="btn hero-btn animate-on-scroll fade-up"><span>পড়া শুরু করুন</span></a>
+            </div>
+        </section>
+
+        <div class="container blog-container">
+            <h3 class="section-title animate-on-scroll fade-up">সর্বশেষ প্রযুক্তি ব্লগ</h3>
+            
+            <!-- Blog Post Card 1 -->
+            <div class="blog-card animate-on-scroll slide-in">
+                <div class="card-content">
+                    <h2 class="post-title">কোয়ান্টাম কম্পিউটিং এর ভবিষ্যৎ</h2>
+                    <p class="post-date">জুলাই ১৫, ২০২৫</p>
+                    <p class="post-excerpt">কোয়ান্টাম মেকানিক্সের বিস্ময়কর নীতি ব্যবহার করে কোয়ান্টাম কম্পিউটারগুলো ক্লাসিক্যাল কম্পিউটারের সীমাবদ্ধতা অতিক্রম করতে চলেছে...</p>
+                    <div class="full-post-content">
+                        <p>সম্পূর্ণ লেখা...</p>
+                        <p>কোয়ান্টাম কম্পিউটিং গণনার জগতে একটি বিপ্লব আনতে প্রস্তুত। এটি ডেটা প্রসেসিং, ওষুধ তৈরি এবং কৃত্রিম বুদ্ধিমত্তার মতো ক্ষেত্রে যুগান্তকারী পরিবর্তন আনবে। এর মূলনীতি হলো কিউবিট (qubit), যা একই সাথে ০ এবং ১ উভয় অবস্থাতেই থাকতে পারে।</p>
+                    </div>
+                    <button class="btn read-more-btn"><span>বিস্তারিত পড়ুন</span></button>
+                </div>
+            </div>
+
+            <!-- Blog Post Card 2 -->
+            <div class="blog-card animate-on-scroll slide-in">
+                <div class="card-content">
+                    <h2 class="post-title">কৃত্রিম বুদ্ধিমত্তার নতুন দিগন্ত</h2>
+                    <p class="post-date">জুলাই ১০, ২০২৫</p>
+                    <p class="post-excerpt">জেনারেটিভ এআই (Generative AI) থেকে শুরু করে নিউরাল নেটওয়ার্কের সর্বশেষ অগ্রগতি পর্যন্ত, কৃত্রিম বুদ্ধিমত্তা দ্রুত বিকশিত হচ্ছে...</p>
+                    <div class="full-post-content">
+                       <p>সম্পূর্ণ লেখা...</p>
+                       <p>কৃত্রিম বুদ্ধিমত্তা (AI) এখন আর কেবল সায়েন্স ফিকশনের বিষয় নয়। এটি আমাদের দৈনন্দিন জীবনের একটি অংশ হয়ে উঠেছে। স্বাস্থ্যসেবা থেকে শুরু করে স্বয়ংচালিত গাড়ি পর্যন্ত, এআই প্রযুক্তির ব্যবহার সর্বত্র। এই পোস্টে আমরা এআই-এর সাম্প্রতিক অগ্রগতি এবং এর ভবিষ্যৎ সম্ভাবনা নিয়ে আলোচনা করব।</p>
+                    </div>
+                    <button class="btn read-more-btn"><span>বিস্তারিত পড়ুন</span></button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>© ২০২৫ তথ্যচিত্র। সর্বস্বত্ব সংরক্ষিত।</p>
+    </footer>
+    
+    <!-- Scripts for animations -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

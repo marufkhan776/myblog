@@ -1,0 +1,419 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=Noto+Serif+Bengali:wght@600;700&display=swap');
+
+/* --- Variable Definitions --- */
+:root {
+    /* Light Theme */
+    --bg-color: #f0f2f5;
+    --text-color: #1c1e21;
+    --card-bg: rgba(255, 255, 255, 0.7);
+    --border-color: #e0e0e0;
+    --accent-color: #007BFF;
+    --glow-color: rgba(0, 123, 255, 0.5);
+    --header-bg: rgba(240, 242, 245, 0.85);
+
+    /* Typography */
+    --font-heading: 'Noto Serif Bengali', serif;
+    --font-body: 'Hind Siliguri', sans-serif;
+}
+
+[data-theme="dark"] {
+    --bg-color: #10121a;
+    --text-color: #e4e6eb;
+    --card-bg: rgba(24, 26, 37, 0.7);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --accent-color: #00d2ff;
+    --glow-color: rgba(0, 210, 255, 0.5);
+    --header-bg: rgba(16, 18, 26, 0.8);
+}
+
+/* --- Base Styles --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    transition: background-color 0.4s, color 0.4s;
+    overflow-x: hidden;
+}
+
+main {
+    position: relative;
+    z-index: 2;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Particle Background --- */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-color: var(--bg-color);
+}
+
+/* --- Scroll Progress Bar --- */
+.scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 0%;
+    background: linear-gradient(90deg, #00d2ff, #3a7bd5, #ee00ff);
+    z-index: 10;
+    transition: width 0.1s linear;
+}
+
+/* --- Header & Footer (Glassmorphism) --- */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 40px;
+    background-color: var(--header-bg);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.site-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--glow-color);
+}
+
+.main-nav a {
+    color: var(--text-color);
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+.main-nav a:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 8px var(--glow-color);
+}
+
+.theme-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: transform 0.3s;
+}
+.theme-button:hover {
+    transform: scale(1.2) rotate(15deg);
+}
+
+.site-footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- Hero Section with Aurora Effect --- */
+.hero-section {
+    position: relative;
+    text-align: center;
+    padding: 100px 20px;
+    margin-bottom: 40px;
+    color: #fff;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(125deg, #3a7bd5, #00d2ff, #ee00ff);
+    background-size: 400% 400%;
+    animation: aurora 15s ease infinite;
+    z-index: -1;
+}
+
+@keyframes aurora {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    color: #fff;
+    text-shadow: 0 2px 15px rgba(0,0,0,0.5);
+}
+
+/* --- Text Animation (Splitting.js) --- */
+.hero-title .char,
+.section-title .char {
+    transform: translateY(115px);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-delay: calc(30ms * var(--char-index));
+}
+.visible .char {
+    transform: translateY(0);
+}
+
+
+/* --- Blog Card with Glow Effect --- */
+.blog-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.blog-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), var(--glow-color), transparent 40%);
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 0;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.blog-card:hover::before {
+    opacity: 1;
+}
+
+/* Ensure card content is above the glow pseudo-element */
+.card-content {
+    position: relative;
+    z-index: 1;
+}
+
+.post-title {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+}
+.full-post-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease-in-out;
+}
+.blog-card.expanded .full-post-content {
+    max-height: 100vh;
+}
+
+/* --- Elite Button Style --- */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border: 1px solid var(--accent-color);
+    border-radius: 50px;
+    background: transparent;
+    color: var(--accent-color);
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.4s ease-in-out;
+}
+.btn span {
+    position: relative;
+    z-index: 1;
+}
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--accent-color);
+    transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.btn:hover {
+    color: #fff;
+}
+.btn:hover::before {
+    width: 100%;
+}
+
+
+/* --- About Page Specific Styles --- */
+.about-container {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--border-color);
+}
+
+.about-me-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.profile-image-container {
+    flex-basis: 200px;
+    flex-shrink: 0;
+}
+
+.profile-image-container img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--accent-color);
+    box-shadow: 0 0 20px var(--glow-color);
+}
+
+.profile-details-container {
+    flex-grow: 1;
+}
+
+.profile-name {
+    font-size: 2.2rem;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.profile-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.profile-bio {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.contact-info {
+    margin-bottom: 25px;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.contact-info a {
+    color: var(--text-color);
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: var(--accent-color);
+}
+
+.contact-info i {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+.social-links a {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    margin-right: 20px;
+    display: inline-block; /* Added for transform to work properly */
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-4px) scale(1.1);
+}
+
+
+/* --- Scroll Animations --- */
+.animate-on-scroll {
+    opacity: 0;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-up { transform: translateY(50px); }
+.slide-in { transform: translateX(-50px); }
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: none;
+}
+
+
+/* --- Responsiveness --- */
+@media (max-width: 768px) {
+    .hero-title { font-size: 2.8rem; }
+    .post-title { font-size: 1.6rem; }
+
+    /* About page responsive layout */
+    .about-me-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-details-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-info p {
+       justify-content: center;
+    }
+
+    .social-links a:last-child {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .theme-button {
+        margin-top: 10px;
+    }
+    
+    .profile-image-container img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-name {
+        font-size: 1.8rem;
+    }
+}
