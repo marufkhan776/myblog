@@ -56,18 +56,47 @@ document.addEventListener('DOMContentLoaded', () => {
         progressBar.style.width = `${scrollPercentage}%`;
     });
 
-    // --- 4. Expandable Blog Card ---
-    const readMoreButtons = document.querySelectorAll('.read-more-btn');
-    readMoreButtons.forEach(button => {
+    // --- 4. Product Category Filter ---
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+
+    filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-            const card = button.closest('.blog-card');
-            card.classList.toggle('expanded');
-            button.querySelector('span').textContent = card.classList.contains('expanded') ? 'সংক্ষিপ্ত করুন' : 'বিস্তারিত পড়ুন';
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            const category = button.getAttribute('data-category');
+            
+            productCards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'grid';
+                    // Add animation
+                    card.classList.remove('visible');
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, 100);
+                } else {
+                    card.style.display = 'none';
+                }
+            });
         });
     });
 
-    // --- 5. Card Glow Effect on Mouse Move ---
-    document.querySelectorAll('.blog-card').forEach(card => {
+    // --- 5. Expandable Product Reviews ---
+    const readReviewButtons = document.querySelectorAll('.read-review-btn');
+    readReviewButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const card = button.closest('.product-card');
+            card.classList.toggle('expanded');
+            button.querySelector('span').textContent = 
+                card.classList.contains('expanded') ? 'Show Less' : 'Read Full Review';
+        });
+    });
+
+    // --- 6. Product Card Glow Effect on Mouse Move ---
+    document.querySelectorAll('.product-card').forEach(card => {
         card.addEventListener('mousemove', e => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
@@ -77,7 +106,71 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 6. Scroll Animations (Intersection Observer) ---
+    // --- 7. Affiliate Link Tracking ---
+    const affiliateButtons = document.querySelectorAll('.affiliate-btn');
+    affiliateButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Get product name for tracking
+            const productCard = button.closest('.product-card');
+            const productTitle = productCard.querySelector('.product-title').textContent;
+            
+            // Track click (you can replace this with your analytics code)
+            console.log(`Affiliate click tracked for: ${productTitle}`);
+            
+            // Optional: Send to analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'affiliate_click', {
+                    'product_name': productTitle,
+                    'currency': 'USD'
+                });
+            }
+            
+            // Add visual feedback
+            button.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                button.style.transform = '';
+            }, 150);
+            
+            // In a real implementation, you would redirect to the actual affiliate link
+            // window.open('your-affiliate-link-here', '_blank');
+            
+            // For demo purposes, show an alert
+            showNotification(`Redirecting to best price for ${productTitle}...`);
+        });
+    });
+
+    // --- 8. Newsletter Subscription ---
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = e.target.querySelector('input[type="email"]').value;
+            
+            // In a real implementation, you would send this to your email service
+            console.log(`Newsletter subscription: ${email}`);
+            
+            showNotification('Thank you for subscribing! Check your email for confirmation.');
+            e.target.reset();
+        });
+    }
+
+    // --- 9. Smooth Scrolling for Anchor Links ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // --- 10. Scroll Animations (Intersection Observer) ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -92,6 +185,115 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
     
+    // --- 11. Price Animation on Scroll ---
+    const priceObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const dealPrice = entry.target.querySelector('.deal-price');
+                if (dealPrice) {
+                    animatePrice(dealPrice);
+                }
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.product-pricing').forEach(el => priceObserver.observe(el));
+
+    function animatePrice(element) {
+        const finalPrice = element.textContent;
+        const numericPrice = parseFloat(finalPrice.replace(/[^0-9.]/g, ''));
+        const currency = finalPrice.replace(/[0-9.]/g, '');
+        
+        let currentPrice = 0;
+        const increment = numericPrice / 30; // 30 frames for animation
+        
+        const animation = setInterval(() => {
+            currentPrice += increment;
+            if (currentPrice >= numericPrice) {
+                currentPrice = numericPrice;
+                clearInterval(animation);
+            }
+            element.textContent = currency + Math.floor(currentPrice);
+        }, 50);
+    }
+
+    // --- 12. Notification System ---
+    function showNotification(message, type = 'success') {
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.textContent = message;
+        
+        // Style the notification
+        Object.assign(notification.style, {
+            position: 'fixed',
+            top: '20px',
+            right: '20px',
+            padding: '15px 20px',
+            backgroundColor: type === 'success' ? '#28a745' : '#dc3545',
+            color: 'white',
+            borderRadius: '5px',
+            zIndex: '1000',
+            opacity: '0',
+            transform: 'translateX(100%)',
+            transition: 'all 0.3s ease'
+        });
+        
+        document.body.appendChild(notification);
+        
+        // Animate in
+        setTimeout(() => {
+            notification.style.opacity = '1';
+            notification.style.transform = 'translateX(0)';
+        }, 100);
+        
+        // Remove after 3 seconds
+        setTimeout(() => {
+            notification.style.opacity = '0';
+            notification.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                }
+            }, 300);
+        }, 3000);
+    }
+
+    // --- 13. Lazy Loading for Images ---
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src || img.src;
+                img.classList.add('loaded');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+
+    document.querySelectorAll('.product-image img').forEach(img => {
+        imageObserver.observe(img);
+    });
+
     // Initial call for elements already in view, and for splitting.js
     Splitting();
+
+    // --- 14. Search Functionality (if search input exists) ---
+    const searchInput = document.querySelector('#product-search');
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            productCards.forEach(card => {
+                const title = card.querySelector('.product-title').textContent.toLowerCase();
+                const excerpt = card.querySelector('.product-excerpt').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || excerpt.includes(searchTerm)) {
+                    card.style.display = 'grid';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    }
 });
