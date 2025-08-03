@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Reviews | TechReviews Pro</title>
+    <meta name="description" content="In-depth product reviews and ratings for the latest tech products. Find honest reviews to help you make informed purchasing decisions.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body data-theme="dark">
+
+    <div class="scroll-progress-bar"></div>
+    <div id="particles-js"></div>
+
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">TechReviews Pro</h1>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="comparisons.html">Compare</a>
+                <a href="deals.html">Best Deals</a>
+                <a href="about.html">About</a>
+                <button id="theme-toggle" class="theme-button">☀️</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 class="section-title animate-on-scroll fade-up" data-splitting>Product Reviews</h1>
+            
+            <!-- Search and Filter Section -->
+            <div class="search-filter-section animate-on-scroll fade-up">
+                <div class="search-container">
+                    <input type="text" id="product-search" placeholder="Search reviews..." class="search-input">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                
+                <div class="category-filter">
+                    <button class="filter-btn active" data-category="all">All Reviews</button>
+                    <button class="filter-btn" data-category="smartphones">Smartphones</button>
+                    <button class="filter-btn" data-category="laptops">Laptops</button>
+                    <button class="filter-btn" data-category="headphones">Headphones</button>
+                    <button class="filter-btn" data-category="smartwatch">Smartwatches</button>
+                    <button class="filter-btn" data-category="gaming">Gaming</button>
+                </div>
+            </div>
+
+            <!-- iPhone 15 Pro Max Review -->
+            <div class="product-card animate-on-scroll slide-in" data-category="smartphones">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&h=300&fit=crop" alt="iPhone 15 Pro Max">
+                    <div class="product-badge">Editor's Choice</div>
+                </div>
+                <div class="product-content">
+                    <div class="product-header">
+                        <h2 class="product-title">iPhone 15 Pro Max Review</h2>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-score">4.9/5</span>
+                        </div>
+                    </div>
+                    <p class="product-excerpt">The ultimate iPhone experience with the largest display, longest battery life, and most advanced camera system. Perfect for content creators and power users.</p>
+                    <div class="product-highlights">
+                        <span class="highlight">A17 Pro Chip</span>
+                        <span class="highlight">5x Telephoto</span>
+                        <span class="highlight">Action Button</span>
+                        <span class="highlight">USB-C</span>
+                    </div>
+                    <div class="product-pricing">
+                        <span class="original-price">$1,299</span>
+                        <span class="deal-price">$1,099</span>
+                        <span class="discount">Save $200</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" class="btn affiliate-btn"><span>🛒 Check Best Price</span></a>
+                        <button class="btn read-review-btn"><span>Read Full Review</span></button>
+                    </div>
+                    <div class="full-review-content">
+                        <h3>Complete Review Analysis</h3>
+                        <h4>Design & Build Quality (9.5/10)</h4>
+                        <p>The iPhone 15 Pro Max features a stunning titanium design that's both lightweight and durable. The natural titanium finish feels premium and resists fingerprints better than previous stainless steel models.</p>
+                        
+                        <h4>Performance (10/10)</h4>
+                        <p>The A17 Pro chip delivers unmatched performance with its 3nm process technology. Gaming, video editing, and AR applications run flawlessly with exceptional efficiency.</p>
+                        
+                        <h4>Camera System (9.8/10)</h4>
+                        <p>The 48MP main camera with 2x crop zoom, new 5x telephoto lens, and improved ultra-wide camera create a versatile photography system. Night mode and computational photography continue to impress.</p>
+                        
+                        <h4>Battery Life (9.2/10)</h4>
+                        <p>Excellent all-day battery life with up to 29 hours of video playback. The USB-C port supports fast charging and universal connectivity.</p>
+                        
+                        <h4>Final Verdict</h4>
+                        <p><strong>Pros:</strong> Premium titanium build, exceptional performance, versatile camera system, improved battery life, USB-C connectivity</p>
+                        <p><strong>Cons:</strong> Premium pricing, large size may not suit everyone, limited zoom range compared to some Android competitors</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dell XPS 13 Plus Review -->
+            <div class="product-card animate-on-scroll slide-in" data-category="laptops">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&h=300&fit=crop" alt="Dell XPS 13 Plus">
+                    <div class="product-badge best-value">Best Value</div>
+                </div>
+                <div class="product-content">
+                    <div class="product-header">
+                        <h2 class="product-title">Dell XPS 13 Plus Review</h2>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-score">4.6/5</span>
+                        </div>
+                    </div>
+                    <p class="product-excerpt">A stunning ultrabook with innovative design, powerful Intel processors, and a beautiful display. Ideal for professionals and students seeking premium performance.</p>
+                    <div class="product-highlights">
+                        <span class="highlight">12th Gen Intel</span>
+                        <span class="highlight">OLED Display</span>
+                        <span class="highlight">Zero Lattice</span>
+                        <span class="highlight">Thunderbolt 4</span>
+                    </div>
+                    <div class="product-pricing">
+                        <span class="original-price">$1,499</span>
+                        <span class="deal-price">$1,199</span>
+                        <span class="discount">Save $300</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" class="btn affiliate-btn"><span>🛒 Check Best Price</span></a>
+                        <button class="btn read-review-btn"><span>Read Full Review</span></button>
+                    </div>
+                    <div class="full-review-content">
+                        <h3>Detailed Analysis</h3>
+                        <h4>Design Innovation (9.0/10)</h4>
+                        <p>The XPS 13 Plus features a revolutionary design with an edge-to-edge keyboard, seamless glass touchpad, and capacitive function keys. The zero lattice design is bold and futuristic.</p>
+                        
+                        <h4>Display Quality (9.5/10)</h4>
+                        <p>The 13.4-inch OLED display delivers exceptional color accuracy, deep blacks, and excellent viewing angles. Perfect for creative work and media consumption.</p>
+                        
+                        <h4>Performance (8.8/10)</h4>
+                        <p>Intel's 12th gen processors provide excellent performance for productivity tasks. However, battery life can suffer under heavy workloads due to the OLED display.</p>
+                        
+                        <h4>Final Thoughts</h4>
+                        <p><strong>Pros:</strong> Innovative design, stunning OLED display, solid performance, premium build quality</p>
+                        <p><strong>Cons:</strong> Learning curve for new keyboard layout, limited port selection, higher price point</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AirPods Pro 2nd Gen Review -->
+            <div class="product-card animate-on-scroll slide-in" data-category="headphones">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=400&h=300&fit=crop" alt="AirPods Pro 2nd Gen">
+                    <div class="product-badge">Top Pick</div>
+                </div>
+                <div class="product-content">
+                    <div class="product-header">
+                        <h2 class="product-title">AirPods Pro 2nd Gen Review</h2>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-score">4.8/5</span>
+                        </div>
+                    </div>
+                    <p class="product-excerpt">Apple's best wireless earbuds with improved noise cancellation, spatial audio, and seamless Apple ecosystem integration. Perfect for iPhone users.</p>
+                    <div class="product-highlights">
+                        <span class="highlight">H2 Chip</span>
+                        <span class="highlight">Active NC</span>
+                        <span class="highlight">Spatial Audio</span>
+                        <span class="highlight">6hr Battery</span>
+                    </div>
+                    <div class="product-pricing">
+                        <span class="original-price">$249</span>
+                        <span class="deal-price">$199</span>
+                        <span class="discount">Save $50</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" class="btn affiliate-btn"><span>🛒 Check Best Price</span></a>
+                        <button class="btn read-review-btn"><span>Read Full Review</span></button>
+                    </div>
+                    <div class="full-review-content">
+                        <h3>In-Depth Review</h3>
+                        <h4>Audio Quality (9.2/10)</h4>
+                        <p>Significantly improved audio quality with better bass response and clearer highs. The H2 chip enables computational audio for enhanced sound processing.</p>
+                        
+                        <h4>Noise Cancellation (9.5/10)</h4>
+                        <p>Best-in-class active noise cancellation that's 2x more effective than the previous generation. Transparency mode is natural and useful for staying aware of surroundings.</p>
+                        
+                        <h4>Ecosystem Integration (10/10)</h4>
+                        <p>Seamless pairing and switching between Apple devices. Spatial audio with head tracking provides an immersive listening experience.</p>
+                        
+                        <h4>Summary</h4>
+                        <p><strong>Pros:</strong> Excellent noise cancellation, great sound quality, seamless Apple integration, improved battery life</p>
+                        <p><strong>Cons:</strong> Premium pricing, limited customization for non-Apple users</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Steam Deck OLED Review -->
+            <div class="product-card animate-on-scroll slide-in" data-category="gaming">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=400&h=300&fit=crop" alt="Steam Deck OLED">
+                    <div class="product-badge">Gaming King</div>
+                </div>
+                <div class="product-content">
+                    <div class="product-header">
+                        <h2 class="product-title">Steam Deck OLED Review</h2>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-score">4.7/5</span>
+                        </div>
+                    </div>
+                    <p class="product-excerpt">The ultimate portable gaming device with a stunning OLED display, improved battery life, and access to your entire Steam library on the go.</p>
+                    <div class="product-highlights">
+                        <span class="highlight">OLED Display</span>
+                        <span class="highlight">Steam Library</span>
+                        <span class="highlight">Linux OS</span>
+                        <span class="highlight">Dock Support</span>
+                    </div>
+                    <div class="product-pricing">
+                        <span class="original-price">$649</span>
+                        <span class="deal-price">$549</span>
+                        <span class="discount">Save $100</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" class="btn affiliate-btn"><span>🛒 Check Best Price</span></a>
+                        <button class="btn read-review-btn"><span>Read Full Review</span></button>
+                    </div>
+                    <div class="full-review-content">
+                        <h3>Gaming Performance Analysis</h3>
+                        <h4>Display Upgrade (9.8/10)</h4>
+                        <p>The new OLED display is a game-changer with vibrant colors, perfect blacks, and improved outdoor visibility. HDR gaming looks spectacular.</p>
+                        
+                        <h4>Performance (8.5/10)</h4>
+                        <p>Solid performance for most games at 800p resolution. AAA titles may require settings adjustments, but the overall gaming experience is excellent.</p>
+                        
+                        <h4>Battery & Ergonomics (8.8/10)</h4>
+                        <p>Improved battery life with the new APU and OLED efficiency. Comfortable for extended gaming sessions with well-placed controls.</p>
+                        
+                        <h4>Game Compatibility (9.0/10)</h4>
+                        <p>Excellent compatibility with verified Steam games. Proton compatibility layer works well for Windows games on Linux.</p>
+                        
+                        <h4>Verdict</h4>
+                        <p><strong>Pros:</strong> Stunning OLED display, vast game library, improved battery, great value for PC gaming</p>
+                        <p><strong>Cons:</strong> Large size, learning curve for Linux, some games may not run perfectly</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Affiliate Disclosure -->
+    <div class="affiliate-disclosure">
+        <div class="container">
+            <p><strong>Affiliate Disclosure:</strong> This website contains affiliate links. We may earn a commission when you make a purchase through these links at no additional cost to you. This helps support our detailed reviews and content creation.</p>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>TechReviews Pro</h4>
+                <p>Your trusted source for honest product reviews and recommendations.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#" data-category="smartphones">Smartphones</a></li>
+                    <li><a href="#" data-category="laptops">Laptops</a></li>
+                    <li><a href="#" data-category="headphones">Audio</a></li>
+                    <li><a href="#" data-category="gaming">Gaming</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">© 2024 TechReviews Pro. All rights reserved.</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

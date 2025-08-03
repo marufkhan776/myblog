@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Deals | TechReviews Pro</title>
+    <meta name="description" content="Find the best tech deals and exclusive discounts. Save money on top-rated products with our curated deal selection.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body data-theme="dark">
+
+    <div class="scroll-progress-bar"></div>
+    <div id="particles-js"></div>
+
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">TechReviews Pro</h1>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="comparisons.html">Compare</a>
+                <a href="deals.html">Best Deals</a>
+                <a href="about.html">About</a>
+                <button id="theme-toggle" class="theme-button">☀️</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section for Deals -->
+        <section class="deals-hero">
+            <div class="hero-content">
+                <h2 class="hero-title" data-splitting>🔥 Best Tech Deals</h2>
+                <p class="hero-description animate-on-scroll fade-up">Exclusive discounts and limited-time offers on top-rated products</p>
+                <div class="deal-timer animate-on-scroll fade-up">
+                    <span class="timer-label">Next deals update in:</span>
+                    <div class="timer-display">
+                        <span id="hours">24</span>h 
+                        <span id="minutes">15</span>m 
+                        <span id="seconds">30</span>s
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Deal Categories -->
+            <div class="deals-categories animate-on-scroll fade-up">
+                <h3>Browse by Category</h3>
+                <div class="category-filter">
+                    <button class="filter-btn active" data-category="all">All Deals</button>
+                    <button class="filter-btn" data-category="smartphones">📱 Phones</button>
+                    <button class="filter-btn" data-category="laptops">💻 Laptops</button>
+                    <button class="filter-btn" data-category="headphones">🎧 Audio</button>
+                    <button class="filter-btn" data-category="gaming">🎮 Gaming</button>
+                    <button class="filter-btn" data-category="accessories">⚡ Accessories</button>
+                </div>
+            </div>
+
+            <!-- Hot Deals Section -->
+            <div class="hot-deals-section">
+                <h3 class="section-title animate-on-scroll fade-up">🔥 Hot Deals - Limited Time</h3>
+                
+                <!-- Deal 1: iPhone 15 Pro -->
+                <div class="deal-card hot-deal animate-on-scroll slide-in" data-category="smartphones">
+                    <div class="deal-timer-badge">
+                        <i class="fas fa-clock"></i>
+                        <span>2h 15m left</span>
+                    </div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400&h=300&fit=crop" alt="iPhone 15 Pro">
+                        <div class="deal-badge hot">🔥 HOT DEAL</div>
+                    </div>
+                    <div class="deal-content">
+                        <h3 class="deal-title">iPhone 15 Pro - Unlocked</h3>
+                        <div class="deal-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span>(4.8/5)</span>
+                        </div>
+                        <div class="deal-pricing">
+                            <span class="original-price">$1,199</span>
+                            <span class="deal-price">$899</span>
+                            <span class="savings">Save $300</span>
+                            <span class="percentage">25% OFF</span>
+                        </div>
+                        <div class="deal-features">
+                            <span>✓ A17 Pro Chip</span>
+                            <span>✓ 48MP Camera</span>
+                            <span>✓ USB-C</span>
+                        </div>
+                        <a href="#" class="btn deal-btn"><span>🛒 Claim Deal Now</span></a>
+                    </div>
+                </div>
+
+                <!-- Deal 2: MacBook Air M3 -->
+                <div class="deal-card featured-deal animate-on-scroll slide-in" data-category="laptops">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&h=300&fit=crop" alt="MacBook Air M3">
+                        <div class="deal-badge featured">⭐ FEATURED</div>
+                    </div>
+                    <div class="deal-content">
+                        <h3 class="deal-title">MacBook Air 13" M3 Chip</h3>
+                        <div class="deal-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>(4.9/5)</span>
+                        </div>
+                        <div class="deal-pricing">
+                            <span class="original-price">$1,299</span>
+                            <span class="deal-price">$1,049</span>
+                            <span class="savings">Save $250</span>
+                            <span class="percentage">19% OFF</span>
+                        </div>
+                        <div class="deal-features">
+                            <span>✓ M3 Chip</span>
+                            <span>✓ 18h Battery</span>
+                            <span>✓ 512GB SSD</span>
+                        </div>
+                        <a href="#" class="btn deal-btn"><span>🛒 Get This Deal</span></a>
+                    </div>
+                </div>
+
+                <!-- Deal 3: Sony WH-1000XM5 -->
+                <div class="deal-card regular-deal animate-on-scroll slide-in" data-category="headphones">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400&h=300&fit=crop" alt="Sony WH-1000XM5">
+                        <div class="deal-badge regular">💰 GREAT DEAL</div>
+                    </div>
+                    <div class="deal-content">
+                        <h3 class="deal-title">Sony WH-1000XM5 Headphones</h3>
+                        <div class="deal-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>(4.7/5)</span>
+                        </div>
+                        <div class="deal-pricing">
+                            <span class="original-price">$399</span>
+                            <span class="deal-price">$299</span>
+                            <span class="savings">Save $100</span>
+                            <span class="percentage">25% OFF</span>
+                        </div>
+                        <div class="deal-features">
+                            <span>✓ 30hr Battery</span>
+                            <span>✓ Active NC</span>
+                            <span>✓ Hi-Res Audio</span>
+                        </div>
+                        <a href="#" class="btn deal-btn"><span>🛒 Shop Now</span></a>
+                    </div>
+                </div>
+
+                <!-- Deal 4: Gaming Setup -->
+                <div class="deal-card bundle-deal animate-on-scroll slide-in" data-category="gaming">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=400&h=300&fit=crop" alt="Gaming Setup">
+                        <div class="deal-badge bundle">📦 BUNDLE</div>
+                    </div>
+                    <div class="deal-content">
+                        <h3 class="deal-title">Ultimate Gaming Bundle</h3>
+                        <div class="deal-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span>(4.6/5)</span>
+                        </div>
+                        <div class="deal-pricing">
+                            <span class="original-price">$799</span>
+                            <span class="deal-price">$599</span>
+                            <span class="savings">Save $200</span>
+                            <span class="percentage">25% OFF</span>
+                        </div>
+                        <div class="deal-features">
+                            <span>✓ Gaming Keyboard</span>
+                            <span>✓ Gaming Mouse</span>
+                            <span>✓ RGB Mousepad</span>
+                        </div>
+                        <a href="#" class="btn deal-btn"><span>🛒 Get Bundle</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Daily Deals Section -->
+            <div class="daily-deals-section">
+                <h3 class="section-title animate-on-scroll fade-up">📅 Today's Special Deals</h3>
+                
+                <div class="daily-deals-grid">
+                    <div class="daily-deal-card animate-on-scroll slide-in" data-category="accessories">
+                        <img src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=200&h=150&fit=crop" alt="AirPods Pro">
+                        <div class="daily-deal-info">
+                            <h4>AirPods Pro 2nd Gen</h4>
+                            <div class="price-info">
+                                <span class="old-price">$249</span>
+                                <span class="new-price">$199</span>
+                            </div>
+                            <span class="discount-badge">20% OFF</span>
+                        </div>
+                    </div>
+
+                    <div class="daily-deal-card animate-on-scroll slide-in" data-category="accessories">
+                        <img src="https://images.unsplash.com/photo-1609592011937-b6b20eea1de6?w=200&h=150&fit=crop" alt="iPad Pro">
+                        <div class="daily-deal-info">
+                            <h4>iPad Pro 11"</h4>
+                            <div class="price-info">
+                                <span class="old-price">$899</span>
+                                <span class="new-price">$749</span>
+                            </div>
+                            <span class="discount-badge">17% OFF</span>
+                        </div>
+                    </div>
+
+                    <div class="daily-deal-card animate-on-scroll slide-in" data-category="gaming">
+                        <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=200&h=150&fit=crop" alt="Steam Deck">
+                        <div class="daily-deal-info">
+                            <h4>Steam Deck OLED</h4>
+                            <div class="price-info">
+                                <span class="old-price">$649</span>
+                                <span class="new-price">$549</span>
+                            </div>
+                            <span class="discount-badge">15% OFF</span>
+                        </div>
+                    </div>
+
+                    <div class="daily-deal-card animate-on-scroll slide-in" data-category="smartphones">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=200&h=150&fit=crop" alt="Samsung Galaxy">
+                        <div class="daily-deal-info">
+                            <h4>Galaxy S24 Ultra</h4>
+                            <div class="price-info">
+                                <span class="old-price">$1,299</span>
+                                <span class="new-price">$999</span>
+                            </div>
+                            <span class="discount-badge">23% OFF</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deal Alert Signup -->
+            <div class="deal-alert-section animate-on-scroll fade-up">
+                <h3>🚨 Never Miss a Deal</h3>
+                <p>Get instant notifications when your favorite products go on sale</p>
+                <form class="deal-alert-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn alert-btn"><span>Get Deal Alerts</span></button>
+                </form>
+                <div class="alert-features">
+                    <span>✓ Instant notifications</span>
+                    <span>✓ Exclusive member deals</span>
+                    <span>✓ Price drop alerts</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Affiliate Disclosure -->
+    <div class="affiliate-disclosure">
+        <div class="container">
+            <p><strong>Deal Disclosure:</strong> Prices and availability are subject to change. We may earn a commission from purchases made through our affiliate links. All deals are verified at the time of posting but may expire without notice.</p>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>TechReviews Pro</h4>
+                <p>Your trusted source for the best tech deals and honest reviews.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Deal Categories</h4>
+                <ul>
+                    <li><a href="#" data-category="smartphones">📱 Smartphones</a></li>
+                    <li><a href="#" data-category="laptops">💻 Laptops</a></li>
+                    <li><a href="#" data-category="headphones">🎧 Headphones</a></li>
+                    <li><a href="#" data-category="gaming">🎮 Gaming</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow for Deals</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">© 2024 TechReviews Pro. All rights reserved.</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

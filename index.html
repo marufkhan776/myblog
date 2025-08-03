@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>তথ্যচিত্র | হোম</title>
+    <title>TechReviews Pro | Best Product Reviews & Recommendations</title>
+    <meta name="description" content="Find the best tech products through our detailed reviews and comparisons. Get exclusive deals and save money on your next purchase.">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=Noto+Serif+Bengali:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body data-theme="dark"> <!-- Defaulting to dark theme for a tech look -->
+<body data-theme="dark">
 
     <!-- Scroll Progress Bar -->
     <div class="scroll-progress-bar"></div>
@@ -19,11 +21,13 @@
 
     <header class="site-header">
         <div class="container">
-            <h1 class="site-title">তথ্যচিত্র</h1>
+            <h1 class="site-title">TechReviews Pro</h1>
             <nav class="main-nav">
-                <a href="index.html">হোম</a>
-                <a href="blog.html">ব্লগ</a>
-                <a href="about.html">আমাদের সম্পর্কে</a>
+                <a href="index.html">Home</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="comparisons.html">Compare</a>
+                <a href="deals.html">Best Deals</a>
+                <a href="about.html">About</a>
                 <button id="theme-toggle" class="theme-button">☀️</button>
             </nav>
         </div>
@@ -33,47 +37,230 @@
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="hero-content">
-                <h2 class="hero-title" data-splitting>প্রযুক্তির স্পন্দন</h2>
-                <p class="hero-description animate-on-scroll fade-up">ভবিষ্যতের প্রযুক্তির গভীরে প্রবেশ করুন, আমাদের সাথে।</p>
-                <a href="blog.html" class="btn hero-btn animate-on-scroll fade-up"><span>পড়া শুরু করুন</span></a>
+                <h2 class="hero-title" data-splitting>Find Your Perfect Tech</h2>
+                <p class="hero-description animate-on-scroll fade-up">Discover the best products through honest reviews, detailed comparisons, and exclusive deals.</p>
+                <div class="hero-buttons animate-on-scroll fade-up">
+                    <a href="#featured-products" class="btn hero-btn primary"><span>Browse Reviews</span></a>
+                    <a href="deals.html" class="btn hero-btn secondary"><span>🔥 Hot Deals</span></a>
+                </div>
             </div>
         </section>
 
-        <div class="container blog-container">
-            <h3 class="section-title animate-on-scroll fade-up">সর্বশেষ প্রযুক্তি ব্লগ</h3>
-            
-            <!-- Blog Post Card 1 -->
-            <div class="blog-card animate-on-scroll slide-in">
-                <div class="card-content">
-                    <h2 class="post-title">কোয়ান্টাম কম্পিউটিং এর ভবিষ্যৎ</h2>
-                    <p class="post-date">জুলাই ১৫, ২০২৫</p>
-                    <p class="post-excerpt">কোয়ান্টাম মেকানিক্সের বিস্ময়কর নীতি ব্যবহার করে কোয়ান্টাম কম্পিউটারগুলো ক্লাসিক্যাল কম্পিউটারের সীমাবদ্ধতা অতিক্রম করতে চলেছে...</p>
-                    <div class="full-post-content">
-                        <p>সম্পূর্ণ লেখা...</p>
-                        <p>কোয়ান্টাম কম্পিউটিং গণনার জগতে একটি বিপ্লব আনতে প্রস্তুত। এটি ডেটা প্রসেসিং, ওষুধ তৈরি এবং কৃত্রিম বুদ্ধিমত্তার মতো ক্ষেত্রে যুগান্তকারী পরিবর্তন আনবে। এর মূলনীতি হলো কিউবিট (qubit), যা একই সাথে ০ এবং ১ উভয় অবস্থাতেই থাকতে পারে।</p>
+        <!-- Trust Indicators -->
+        <section class="trust-section">
+            <div class="container">
+                <div class="trust-indicators animate-on-scroll fade-up">
+                    <div class="trust-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Trusted Reviews</span>
                     </div>
-                    <button class="btn read-more-btn"><span>বিস্তারিত পড়ুন</span></button>
+                    <div class="trust-item">
+                        <i class="fas fa-users"></i>
+                        <span>10K+ Happy Customers</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-percentage"></i>
+                        <span>Exclusive Discounts</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Updated Daily</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container" id="featured-products">
+            <h3 class="section-title animate-on-scroll fade-up">Featured Product Reviews</h3>
+            
+            <!-- Product Category Filter -->
+            <div class="category-filter animate-on-scroll fade-up">
+                <button class="filter-btn active" data-category="all">All Products</button>
+                <button class="filter-btn" data-category="smartphones">Smartphones</button>
+                <button class="filter-btn" data-category="laptops">Laptops</button>
+                <button class="filter-btn" data-category="headphones">Headphones</button>
+                <button class="filter-btn" data-category="smartwatch">Smartwatches</button>
+            </div>
+
+            <!-- Product Review Card 1 - iPhone 15 Pro -->
+            <div class="product-card animate-on-scroll slide-in" data-category="smartphones">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400&h=300&fit=crop" alt="iPhone 15 Pro">
+                    <div class="product-badge">Editor's Choice</div>
+                </div>
+                <div class="product-content">
+                    <div class="product-header">
+                        <h2 class="product-title">iPhone 15 Pro Review</h2>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-score">4.8/5</span>
+                        </div>
+                    </div>
+                    <p class="product-excerpt">The iPhone 15 Pro delivers exceptional performance with its A17 Pro chip, stunning titanium design, and revolutionary camera system. Perfect for professionals and enthusiasts alike.</p>
+                    <div class="product-highlights">
+                        <span class="highlight">A17 Pro Chip</span>
+                        <span class="highlight">48MP Camera</span>
+                        <span class="highlight">Titanium Build</span>
+                    </div>
+                    <div class="product-pricing">
+                        <span class="original-price">$1,199</span>
+                        <span class="deal-price">$999</span>
+                        <span class="discount">Save $200</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" class="btn affiliate-btn"><span>🛒 Check Best Price</span></a>
+                        <button class="btn read-review-btn"><span>Read Full Review</span></button>
+                    </div>
+                    <div class="full-review-content">
+                        <p><strong>Detailed Review:</strong></p>
+                        <p>The iPhone 15 Pro represents Apple's most advanced smartphone yet. The titanium construction not only looks premium but also makes the device lighter while maintaining durability. The A17 Pro chip delivers unmatched performance for both everyday tasks and demanding applications like 4K video editing and gaming.</p>
+                        <p><strong>Camera Performance:</strong> The 48MP main camera produces stunning photos with incredible detail. The new 5x telephoto lens brings distant subjects closer without losing quality.</p>
+                        <p><strong>Pros:</strong> Exceptional build quality, outstanding camera system, powerful performance, improved battery life</p>
+                        <p><strong>Cons:</strong> Premium price point, USB-C transition may require new accessories</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Blog Post Card 2 -->
-            <div class="blog-card animate-on-scroll slide-in">
-                <div class="card-content">
-                    <h2 class="post-title">কৃত্রিম বুদ্ধিমত্তার নতুন দিগন্ত</h2>
-                    <p class="post-date">জুলাই ১০, ২০২৫</p>
-                    <p class="post-excerpt">জেনারেটিভ এআই (Generative AI) থেকে শুরু করে নিউরাল নেটওয়ার্কের সর্বশেষ অগ্রগতি পর্যন্ত, কৃত্রিম বুদ্ধিমত্তা দ্রুত বিকশিত হচ্ছে...</p>
-                    <div class="full-post-content">
-                       <p>সম্পূর্ণ লেখা...</p>
-                       <p>কৃত্রিম বুদ্ধিমত্তা (AI) এখন আর কেবল সায়েন্স ফিকশনের বিষয় নয়। এটি আমাদের দৈনন্দিন জীবনের একটি অংশ হয়ে উঠেছে। স্বাস্থ্যসেবা থেকে শুরু করে স্বয়ংচালিত গাড়ি পর্যন্ত, এআই প্রযুক্তির ব্যবহার সর্বত্র। এই পোস্টে আমরা এআই-এর সাম্প্রতিক অগ্রগতি এবং এর ভবিষ্যৎ সম্ভাবনা নিয়ে আলোচনা করব।</p>
-                    </div>
-                    <button class="btn read-more-btn"><span>বিস্তারিত পড়ুন</span></button>
+            <!-- Product Review Card 2 - MacBook Air M3 -->
+            <div class="product-card animate-on-scroll slide-in" data-category="laptops">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&h=300&fit=crop" alt="MacBook Air M3">
+                    <div class="product-badge best-value">Best Value</div>
                 </div>
+                <div class="product-content">
+                    <div class="product-header">
+                        <h2 class="product-title">MacBook Air M3 Review</h2>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-score">4.9/5</span>
+                        </div>
+                    </div>
+                    <p class="product-excerpt">The new MacBook Air with M3 chip offers incredible performance and battery life in an ultra-thin design. Perfect for students, professionals, and creative work.</p>
+                    <div class="product-highlights">
+                        <span class="highlight">M3 Chip</span>
+                        <span class="highlight">18hr Battery</span>
+                        <span class="highlight">Liquid Retina Display</span>
+                    </div>
+                    <div class="product-pricing">
+                        <span class="original-price">$1,299</span>
+                        <span class="deal-price">$1,099</span>
+                        <span class="discount">Save $200</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" class="btn affiliate-btn"><span>🛒 Check Best Price</span></a>
+                        <button class="btn read-review-btn"><span>Read Full Review</span></button>
+                    </div>
+                    <div class="full-review-content">
+                        <p><strong>Detailed Review:</strong></p>
+                        <p>The MacBook Air M3 continues Apple's tradition of excellence with improved performance and efficiency. The M3 chip delivers up to 20% faster performance compared to M2, while maintaining the same incredible battery life.</p>
+                        <p><strong>Performance:</strong> Whether you're editing videos, coding, or running multiple applications, the M3 handles everything smoothly without fan noise.</p>
+                        <p><strong>Pros:</strong> Excellent performance, silent operation, great display, long battery life, lightweight design</p>
+                        <p><strong>Cons:</strong> Limited port selection, premium pricing for higher storage options</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Review Card 3 - Sony WH-1000XM5 -->
+            <div class="product-card animate-on-scroll slide-in" data-category="headphones">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400&h=300&fit=crop" alt="Sony WH-1000XM5">
+                    <div class="product-badge">Top Rated</div>
+                </div>
+                <div class="product-content">
+                    <div class="product-header">
+                        <h2 class="product-title">Sony WH-1000XM5 Review</h2>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-score">4.7/5</span>
+                        </div>
+                    </div>
+                    <p class="product-excerpt">Industry-leading noise cancellation meets exceptional sound quality. The WH-1000XM5 delivers premium audio experience for music lovers and professionals.</p>
+                    <div class="product-highlights">
+                        <span class="highlight">30hr Battery</span>
+                        <span class="highlight">Hi-Res Audio</span>
+                        <span class="highlight">Advanced NC</span>
+                    </div>
+                    <div class="product-pricing">
+                        <span class="original-price">$399</span>
+                        <span class="deal-price">$329</span>
+                        <span class="discount">Save $70</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" class="btn affiliate-btn"><span>🛒 Check Best Price</span></a>
+                        <button class="btn read-review-btn"><span>Read Full Review</span></button>
+                    </div>
+                    <div class="full-review-content">
+                        <p><strong>Detailed Review:</strong></p>
+                        <p>Sony has once again raised the bar with the WH-1000XM5. These headphones offer the best noise cancellation technology available, making them perfect for travel, work, or simply enjoying music.</p>
+                        <p><strong>Sound Quality:</strong> Rich, balanced sound with deep bass and clear highs. The LDAC codec support ensures hi-res audio quality.</p>
+                        <p><strong>Pros:</strong> Excellent noise cancellation, superb sound quality, comfortable fit, long battery life</p>
+                        <p><strong>Cons:</strong> Not foldable, premium price point</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div class="newsletter-section animate-on-scroll fade-up">
+                <h3>Stay Updated with Latest Reviews</h3>
+                <p>Get weekly updates on new product reviews, deals, and tech news</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn"><span>Subscribe</span></button>
+                </form>
             </div>
         </div>
     </main>
 
+    <!-- Affiliate Disclosure -->
+    <div class="affiliate-disclosure">
+        <div class="container">
+            <p><strong>Affiliate Disclosure:</strong> This website contains affiliate links. We may earn a commission when you make a purchase through these links at no additional cost to you. This helps support our reviews and content creation.</p>
+        </div>
+    </div>
+
     <footer class="site-footer">
-        <p>© ২০২৫ তথ্যচিত্র। সর্বস্বত্ব সংরক্ষিত।</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>TechReviews Pro</h4>
+                <p>Your trusted source for honest product reviews and recommendations.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="comparisons.html">Comparisons</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">© 2024 TechReviews Pro. All rights reserved.</p>
     </footer>
     
     <!-- Scripts for animations -->
